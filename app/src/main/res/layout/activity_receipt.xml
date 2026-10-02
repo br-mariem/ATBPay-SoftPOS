@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Icône de résultat (succès / échec) -->
+        <ImageView
+            android:id="@+id/ivResultIcon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_success" />
+
+        <!-- Titre du résultat -->
+        <TextView
+            android:id="@+id/tvResultTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="PAIEMENT EFFECTUÉ AVEC SUCCÈS"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_green_dark" />
+
+        <!-- Type de transaction (ACHAT / ANNULATION) -->
+        <TextView
+            android:id="@+id/tvTxType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="ACHAT"
+            android:textSize="12sp"
+            android:textColor="#64748B"
+            android:letterSpacing="0.1" />
+
+        <!-- Montant -->
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="0.000 TND"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <!-- Ligne de séparation -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#E2E8F0" />
+
+        <!-- Bloc "reçu" (fond gris clair, façon ticket) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#F8FAFC"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="ARAB TUNISIAN BANK"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1E293B" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TUNIS"
+                android:textSize="10sp"
+                android:textColor="#94A3B8"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Date / Temps -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="DATE: 06/07/26"
+                    android:textSize="11sp"
+                    android:textColor="#334155" />
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="TEMPS: 10:00:00"
+                    android:textSize="11sp"
+                    android:textColor="#334155" />
+            </LinearLayout>
+
+            <!-- Type de carte -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Type"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvCardType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="Visa Debit"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- AID -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="AID"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvAid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="A0000000031010"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- PAN (masqué) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PAN"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvPan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="419751******7751"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- CID / TSI / TVR sur une même ligne -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="CID"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvCid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="80"
+                    android:textSize="11sp"
+                    android:textColor="#000000" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TSI"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvTsi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="0"
+                    android:textSize="11sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- TVR -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="TVR"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvTvr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="0000000000"
+                    android:textSize="11sp"
+                    android:textColor="#000000"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- Référence -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Référence"
+                    android:textSize="11sp"
+                    android:textColor="#64748B" />
+                <TextView
+                    android:id="@+id/tvReference"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="0001001046"
+                    android:textSize="11sp"
+                    android:textColor="#000000" />
+            </LinearLayout>
+
+            <!-- Ligne pointillée de séparation -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="#E2E8F0" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MERCI DE VOTRE VISITE"
+                android:textSize="11sp"
+                android:textColor="#64748B" />
+        </LinearLayout>
+
+        <!-- Espace avant le bouton -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:minHeight="24dp" />
+
+        <!-- Bouton retour au menu -->
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#0F172A"
+            android:text="RETOUR AU MENU"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</ScrollView>

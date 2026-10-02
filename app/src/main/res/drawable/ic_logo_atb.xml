@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <!-- Fond circulaire dégradé de rouge ATB -->
+    <path
+        android:fillColor="#E30613"
+        android:pathData="M40,40m-36,0a36,36 0,1,1 72,0a36,36 0,1,1 -72,0" />
+    <path
+        android:fillColor="#FF4D58"
+        android:pathData="M40,40m-30,0a30,30 0,1,1 60,0a30,30 0,1,1 -60,0" />
+    <!-- Symbole de carte bancaire blanche au centre -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,30H28c-2.2,0-4,1.8-4,4v12c0,2.2 1.8,4 4,4h24c2.2,0 4-1.8 4-4V34C56,31.8 54.2,30 52,30z M52,46H28v-4h24V46z M52,38H28v-4h24V38z" />
+    <!-- Petite puce de sécurité -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M30,34h4v3h-4z" />
+</vector>

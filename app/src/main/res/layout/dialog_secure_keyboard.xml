@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.apple.com/apk/res-auto"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clavier sécurisé"
+            android:textColor="#4C3C75"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Indicateurs de PIN (4 cercles personnalisés) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/dot1"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginHorizontal="6dp"
+                android:src="@drawable/pin_dot_empty" />
+
+            <ImageView
+                android:id="@+id/dot2"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginHorizontal="6dp"
+                android:src="@drawable/pin_dot_empty" />
+
+            <ImageView
+                android:id="@+id/dot3"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginHorizontal="6dp"
+                android:src="@drawable/pin_dot_empty" />
+
+            <ImageView
+                android:id="@+id/dot4"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginHorizontal="6dp"
+                android:src="@drawable/pin_dot_empty" />
+        </LinearLayout>
+
+        <!-- Clavier Numérique Séquentiel en Grille (123, 456, 789, 0) -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:alignmentMode="alignBounds"
+            android:background="#F8FAFC"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Ligne 1 : 1, 2, 3 -->
+            <Button
+                android:id="@+id/btnSecKey1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="1"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="2"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="3"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Ligne 2 : 4, 5, 6 -->
+            <Button
+                android:id="@+id/btnSecKey4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="4"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="5"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="6"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Ligne 3 : 7, 8, 9 -->
+            <Button
+                android:id="@+id/btnSecKey7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="7"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="8"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="9"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Ligne 4 : Effacer (X), 0, Valider (✓) -->
+            <Button
+                android:id="@+id/btnSecKeyClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="X"
+                android:backgroundTint="#DC2626"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKey0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="0"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#1E293B"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnSecKeyConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:text="✓"
+                android:backgroundTint="#2B1B64"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvSecCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ANNULER"
+            android:textColor="#94A3B8"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFC">
+
+    <LinearLayout
+        android:id="@+id/headerBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Retour" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Historique ATB Pay"
+            android:textColor="#1E293B"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFilters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filtrer les transactions par date"
+                android:textColor="#475569"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rgFilterType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="12dp">
+
+                <RadioButton
+                    android:id="@+id/rbAll"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tout"
+                    android:checked="true"
+                    android:textSize="11sp"
+                    android:buttonTint="#E30613" />
+
+                <RadioButton
+                    android:id="@+id/rbSingle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Journée"
+                    android:textSize="11sp"
+                    android:buttonTint="#E30613" />
+
+                <RadioButton
+                    android:id="@+id/rbRange"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Période"
+                    android:textSize="11sp"
+                    android:buttonTint="#E30613" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/layoutSingleDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#F1F5F9"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date :"
+                    android:textSize="11sp"
+                    android:textColor="#64748B"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tvSingleDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sélectionner..."
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#E30613"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutRangeDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="#F1F5F9"
+                android:padding="8dp"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:weightSum="2">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Du : " android:textSize="11sp" android:textColor="#64748B"/>
+                    <TextView android:id="@+id/tvStartDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Début..." android:textSize="11sp" android:textStyle="bold" android:textColor="#E30613" android:background="?android:attr/selectableItemBackground" android:clickable="true" android:focusable="true"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="horizontal">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Au : " android:textSize="11sp" android:textColor="#64748B"/>
+                    <TextView android:id="@+id/tvEndDate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fin..." android:textSize="11sp" android:textStyle="bold" android:textColor="#E30613" android:background="?android:attr/selectableItemBackground" android:clickable="true" android:focusable="true"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnClearFilters"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:backgroundTint="#F1F5F9"
+                android:text="Réinitialiser"
+                android:textColor="#475569"
+                android:textSize="10sp"
+                android:padding="0dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvEmptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aucune transaction trouvée"
+        android:textColor="#94A3B8"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/cardFilters"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ListView
+        android:id="@+id/lvTransactions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="12dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        app:layout_constraintTop_toBottomOf="@id/cardFilters"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

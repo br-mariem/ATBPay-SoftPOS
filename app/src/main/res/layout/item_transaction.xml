@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <!-- Ligne 1 : Titre + Montant -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Achat"
+            android:textColor="#3A3A3C"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-12.000 TND"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <!-- Ligne 2 : Date -->
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="24/05/23 15:19:16"
+        android:textColor="#6E6E73"
+        android:textSize="12sp"/>
+
+    <!-- Ligne 3 : Référence -->
+    <TextView
+        android:id="@+id/tvRef"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Réf: 000193"
+        android:textColor="#6E6E73"
+        android:textSize="12sp"/>
+
+    <!-- Ligne 4 : Statut -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="APPROUVÉ"
+        android:textStyle="bold"
+        android:textSize="12sp"/>
+
+</LinearLayout>

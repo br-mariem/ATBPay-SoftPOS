@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Couleurs de base de l'application ATB -->
+    <color name="purple_200">#FF8F94</color>
+    <color name="purple_500">#E30613</color> <!-- Rouge ATB Principal -->
+    <color name="purple_700">#B0000B</color> <!-- Rouge ATB Foncé -->
+    <color name="teal_200">#9CA3AF</color>
+    <color name="teal_700">#4B5563</color>
+
+    <!-- Palette Rouge Clair et Dégradés Élégants -->
+    <color name="atb_red_primary">#E30613</color>
+    <color name="atb_red_light">#FF4D58</color> <!-- Rouge clair vif -->
+    <color name="atb_red_gradient_start">#FF5252</color>
+    <color name="atb_red_gradient_end">#FF7A00</color> <!-- Dégradé chaleureux -->
+
+    <!-- Nuances de Gris Métallique et Élégant -->
+    <color name="atb_grey_dark">#1F2937</color> <!-- Gris anthracite -->
+    <color name="atb_grey_medium">#6B7280</color> <!-- Gris moyen -->
+    <color name="atb_grey_light">#E5E7EB</color> <!-- Gris très clair de fond -->
+    <color name="atb_grey_soft">#F3F4F6</color> <!-- Gris ultra doux pour cartes -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="red_accent">#E30613</color> <!-- Couleur d'accentuation rouge pour les loaders et textes -->
+
+    <!-- Couleurs sémantiques indispensables pour le support des thèmes -->
+    <color name="bg_window">#F8FAFC</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="text_primary">#1E293B</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="border_color">#E2E8F0</color>
+</resources>

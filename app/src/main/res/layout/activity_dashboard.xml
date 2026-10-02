@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Contenu Principal -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_window">
+
+        <!-- En-tête de l'application -->
+        <RelativeLayout
+            android:id="@+id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/bg_card"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <ImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="Menu principal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="ACCUEIL"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:letterSpacing="0.1" />
+
+            <ImageView
+                android:id="@+id/btnLogout"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_logout"
+                android:contentDescription="Déconnexion" />
+        </RelativeLayout>
+
+        <!-- Contenu Défilant -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomNavigation"
+            android:layout_below="@id/headerLayout"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Section des 3 Dernières Transactions (en haut) -->
+                <LinearLayout
+                    android:id="@+id/layoutLastTransactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="4dp">
+
+                    <!-- Transaction 1 (CardView) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardTx1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        android:layout_marginBottom="12dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:id="@+id/tvTxTitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Achat"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#991B1B" />
+                                <TextView
+                                    android:id="@+id/tvTxDate1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="24/05/23 15:19:16"
+                                    android:textSize="10sp"
+                                    android:textColor="#94A3B8" />
+                            </RelativeLayout>
+                            <TextView
+                                android:id="@+id/tvTxReference1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Référence: 000193"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvTxCard1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Numéro de carte: 476173******0027"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginBottom="12dp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="VISA"
+                                    android:textStyle="bold|italic"
+                                    android:textSize="12sp"
+                                    android:textColor="#1E40AF" />
+                                <TextView
+                                    android:id="@+id/tvTxAmount1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="12,000 TND"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#DC2626" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Transaction 2 (CardView - Masquée par défaut) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardTx2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:id="@+id/tvTxTitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Achat"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#991B1B" />
+                                <TextView
+                                    android:id="@+id/tvTxDate2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="24/05/23 15:21:40"
+                                    android:textSize="10sp"
+                                    android:textColor="#94A3B8" />
+                            </RelativeLayout>
+                            <TextView
+                                android:id="@+id/tvTxReference2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Référence: 000194"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvTxCard2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Numéro de carte: 476173******0027"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginBottom="12dp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="VISA"
+                                    android:textStyle="bold|italic"
+                                    android:textSize="12sp"
+                                    android:textColor="#1E40AF" />
+                                <TextView
+                                    android:id="@+id/tvTxAmount2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="45,000 TND"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#DC2626" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Transaction 3 (CardView - Masquée par défaut) -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardTx3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/bg_card"
+                        android:layout_marginBottom="12dp"
+                        android:visibility="gone">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp">
+                                <TextView
+                                    android:id="@+id/tvTxTitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Achat"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#991B1B" />
+                                <TextView
+                                    android:id="@+id/tvTxDate3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="24/05/23 15:23:10"
+                                    android:textSize="10sp"
+                                    android:textColor="#94A3B8" />
+                            </RelativeLayout>
+                            <TextView
+                                android:id="@+id/tvTxReference3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Référence: 000195"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvTxCard3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Numéro de carte: 476173******0027"
+                                android:textSize="10sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginBottom="12dp" />
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="VISA"
+                                    android:textStyle="bold|italic"
+                                    android:textSize="12sp"
+                                    android:textColor="#1E40AF" />
+                                <TextView
+                                    android:id="@+id/tvTxAmount3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="20,000 TND"
+                                    android:textStyle="bold"
+                                    android:textSize="12sp"
+                                    android:textColor="#DC2626" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <!-- Section Historique et "Voir tout" positionnée au-dessous des transactions -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Historique"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+                    <TextView
+                        android:id="@+id/btnViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Voir tout"
+                        android:textColor="#DC2626"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <!-- Section Transactions & Boutons à la partie inférieure -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transactions"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Boutons d'Action Côte-à-Côte -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Carte Carrée Achat -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardAchat"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:layout_marginRight="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="3dp"
+                            app:cardBackgroundColor="#0F172A"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:padding="12dp">
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_credit_card_red"
+                                    android:layout_marginBottom="8dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ACHAT"
+                                    android:textStyle="bold"
+                                    android:textSize="10sp"
+                                    android:textColor="#FFFFFF"
+                                    android:letterSpacing="0.1" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Carte Carrée Annulation -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardAnnulation"
+                            android:layout_width="0dp"
+                            android:layout_height="96dp"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="6dp"
+                            app:cardCornerRadius="16dp"
+                            app:cardElevation="3dp"
+                            app:cardBackgroundColor="#F97316"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:gravity="center"
+                                android:padding="12dp">
+                                <ImageView
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:src="@drawable/ic_cancel"
+                                    android:layout_marginBottom="8dp"/>
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="ANNULATION"
+                                    android:textStyle="bold"
+                                    android:textSize="10sp"
+                                    android:textColor="#FFFFFF"
+                                    android:letterSpacing="0.1" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Barre de Navigation Inférieure -->
+        <LinearLayout
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg_card"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <!-- 5 Onglets Simulés -->
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:id="@+id/tabHome">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_card_red" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accueil" android:textSize="8sp" android:textColor="#DC2626" android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:id="@+id/tabExplore">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_compass" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Historique" android:textSize="8sp" android:textColor="#94A3B8"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:id="@+id/tabBookmark">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_bookmark" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Favoris" android:textSize="8sp" android:textColor="#94A3B8"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center" android:id="@+id/tabSettings">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_settings" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Paramètres" android:textSize="8sp" android:textColor="#94A3B8"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/tabProfile" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_profile" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profil" android:textSize="8sp" android:textColor="#94A3B8"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- Menu Drawer Latéral ATB Pay -->
+    <LinearLayout
+        android:id="@+id/navDrawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/bg_card"
+        android:orientation="vertical"
+        android:paddingTop="48dp"
+        android:paddingBottom="16dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <!-- En-tête du Drawer (Avatar + Nom) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- Photo de profil de l'utilisateur -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="40dp"
+                app:cardElevation="2dp"
+                android:layout_marginBottom="12dp">
+                <ImageView
+                    android:id="@+id/ivDrawerAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@android:drawable/ic_menu_gallery" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ATB Pay"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#4c3c75" />
+        </LinearLayout>
+
+        <!-- Séparateur -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F5F9"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Éléments de menu -->
+        <!-- Profil -->
+        <LinearLayout
+            android:id="@+id/drawerItemProfile"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:tint="#475569" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Profile"
+                android:textSize="14sp"
+                android:textColor="#334155"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Historique -->
+        <LinearLayout
+            android:id="@+id/drawerItemHistory"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_recent_history"
+                android:tint="#475569" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Historique"
+                android:textSize="14sp"
+                android:textColor="#334155"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Paramètres -->
+        <LinearLayout
+            android:id="@+id/drawerItemSettings"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_preferences"
+                android:tint="#475569" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:text="Paramètres"
+                android:textSize="14sp"
+                android:textColor="#334155"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

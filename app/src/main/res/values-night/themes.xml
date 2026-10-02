@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Thème principal de l'application ATBPay (Mode Nuit) -->
+    <style name="Theme.ATBPay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Couleurs principales de la charte ATB -->
+        <item name="colorPrimary">@color/atb_red_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Couleurs secondaires -->
+        <item name="colorSecondary">@color/atb_grey_dark</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Couleur d'arrière-plan par défaut -->
+        <item name="android:windowBackground">@color/atb_grey_dark</item>
+    </style>
+
+    <!-- Alias de compatibilité pour éviter tout conflit -->
+    <style name="Theme.ATBNfcApp" parent="Theme.ATBPay" />
+</resources>

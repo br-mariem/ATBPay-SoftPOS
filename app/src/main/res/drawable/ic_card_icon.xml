@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Corps blanc de la carte -->
+    <item
+        android:width="42dp"
+        android:height="28dp"
+        android:gravity="center">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+    <!-- Bande rouge horizontale -->
+    <item
+        android:width="42dp"
+        android:height="7dp"
+        android:gravity="center_horizontal|top"
+        android:top="21dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#F0392B" />
+        </shape>
+    </item>
+
+    <!-- Puce doree -->
+    <item
+        android:width="10dp"
+        android:height="7dp"
+        android:gravity="start|top"
+        android:left="10dp"
+        android:top="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FBBF24" />
+            <corners android:radius="1dp" />
+        </shape>
+    </item>
+
+</layer-list>
